@@ -11,7 +11,6 @@ import com.hyungseo.root.command.BListCommand;
 @Controller
 public class BController {
 	
-	
 	BCommand bCommand = null;
 	
 	@RequestMapping(value = "/")
@@ -22,6 +21,7 @@ public class BController {
 	
 	@RequestMapping(value = "/list")
 	public String list(Model model) {
+		System.out.println("/list");
 		bCommand = new BListCommand();
 		bCommand.excute(model);
 		
