@@ -8,12 +8,33 @@
 <title>게시판 글목록</title>
 </head>
 <body>
-		<c:forEach items="${list }" var="bdto">
-			${bdto.btitle }<br>
+		<h2>자유게시판</h2>
+		<hr>
+		<table border="1" cellspacing="0" cellpadding="0" width="1000">
+		<tr>
+			<th>번호</th>
+			<th>글쓴이</th>
+			<th width="500">글제목</th>
+			<th>게시일</th>
+			<th>조회수</th>
+		</tr>
 		
-		
-		</c:forEach>
-		
-	
+			<c:forEach items="${list }" var="bdto">
+			<tr>
+				<td>${bdto.bid }</td>
+				<td>${bdto.bname }</td>
+				<td>${bdto.btitle }</td>
+				<td>${bdto.bdate }</td>
+				<td>${bdto.bhit }</td>
+				
+			</tr>
+			</c:forEach>
+			
+			<tr>
+				<td>
+					<input type="button" value="글쓰기" onclick="javascript:window.location='writeForm'">
+				</td>
+			</tr>
+		</table>
 </body>
 </html>
