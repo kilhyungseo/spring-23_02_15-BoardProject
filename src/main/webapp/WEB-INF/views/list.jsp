@@ -23,7 +23,10 @@
 			<tr>
 				<td>${bdto.bid }</td>
 				<td>${bdto.bname }</td>
-				<td>${bdto.btitle }</td>
+				<td>
+					<c:forEach begin="1" end="${bdto.bindent }">&nbsp&nbsp&nbsp</c:forEach>
+					<a href="contentView?bid=${bdto.bid }">${bdto.btitle }</a>
+				</td>
 				<td>${bdto.bdate }</td>
 				<td>${bdto.bhit }</td>
 				
@@ -33,6 +36,11 @@
 			<tr>
 				<td>
 					<input type="button" value="글쓰기" onclick="javascript:window.location='writeForm'">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					총 게시물의 수 : ${bidhap}
 				</td>
 			</tr>
 		</table>
